@@ -1,0 +1,44 @@
+Down load maven first
+
+http://maven.apache.org/download.cgi
+=====
+M2_HOME --new variable
+path edit--with bin value
+JAVA_HOME--shoudl redirect to jdk
+Maven 3.2.5 (Binary zip) 	apache-maven-3.2.5-bin.zip
+(Not the source one)
+====
+mvn --version
+
+check ths version
+
+====
+make dir mmmaven
+
+==
+create a new project
+mvn archetype:generate
+chpoose numbe:nothing
+choose version ;
+choose the groupId :package name
+artificate id :project name
+
+======
+project gets created
+
+main and test
+
+test ---keep test cases in that 
+
+=====
+importing to eclipse
+
+go inside the project ..in maven folder...
+then
+mvn eclipse:eclipse
+========
+mvn compile
+mvn clean 
+mvn test
+mvn site
+

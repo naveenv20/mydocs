@@ -1,0 +1,168 @@
+http://jenkins-ci.org/
+
+sownload the latest war file
+
+
+https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+as+a+Windows+service
+
+
+java -jar jenkins.war
+
+
+INFO: Jenkins is fully up and running
+
+localhost:8080
+
+====
+
+
+manage jenkins
+
+installwindowsserive--- when u start windows .. jenkins.exe.. automatically starts (if u want do it)
+
+===
+new item
+
+simple one first....
+name the prjt
+freestyle project
+
+source code inter...choosen none for simple 
+
+we can use svn .. git etc...
+
+
+====
+under build 
+
+sample one 
+windows cmd project
+
+save 
+====
+open the project 
+goto the latest build
+console output
+check the cmd output
+========
+
+
+
+configure
+running at specific intervals
+
+minute hour dom month
+	
+0-59/2 * * * * 
+evry 2 min 
+
+H/5 * * * * 
+evry 5 min 
+
+=====
+after build setting 
+u can mail the status
+managae gen
+configure system
+SMTP server
+advanced
+give the required details 
+==========
+
+u can run the ant build.xml from jenkins
+
+what happens when u have build in diff servers
+
+GIT and GITHUB
+
+
+GIT --tool which helps in checking and sync the code ..it connects to some server
+file transfer b/w serve anf local machine git
+
+
+git bash.....open it
+
+now install the git plug in jenkins
+
+
+manage jenkins--manage plugins...available
+
+git plugin... install that 
+
+
+
+restart the jenkins server
+
+enable auto refresh
+
+
+---
+manage jenkins--concigire system
+give the git.exe ..path to git
+C:\Program Files (x86)\Git\cmd\git.exe
+
+SSH keys ... part for sercurity
+
+open git bash
+==
+pwd
+mkdir .ssh
+cd .ssh
+ssh-keygen -t rsa -C "naveenv20@gmail.com"
+(check in ssh folder id_rsa and id_rsa.pub
+
+
+gister the github as the reuiqres server
+ssh -v git@github.com
+(ssh flder known_hosts)
+
+====
+
+
+GITHUB is server( repositry)
+naveenv20@gmail.com
+greffendor8*
+
+
+
+handshake
+
+go the github account 
+go settings
+ssh keys
+add a key ( provide the id_rsa.pub key infor there)
+
+
+go to git diectory in ur machine
+paste the .ssh folder over there
+
+
+on cmd 
+==
+navigate to git bin
+C:\Program Files (x86)\Git\bin
+
+ssh.exe -T git@github.com
+
+
+
+
+on git hub account .. create a repositry 
+
+and git bas ..go to the project path and 
+execute the given commands... 
+git init
+
+
+git init
+git add .           (. for all files)
+git commit -m "first commit"
+git remote add origin https://github.com/naveenv20/SecondRepo.git
+git push -u origin master
+
+
+
+
+
+
+

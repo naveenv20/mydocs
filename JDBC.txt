@@ -1,0 +1,84 @@
+go to mysql download and download it...
+
+go to the bin folder
+
+then 
+
+
+
+mysql -u root -p
+root
+
+show databases;
+use test;
+show tables;
+
+
+create a sample table
+
+
+java docs
+
+http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html
+===========
+import java.sql.*
+
+onclude the jdbc driver into tthe project
+
+
+Connections class.
+
+Driver class
+(will connect java to database)
+
+include the statement inside the try block
+
+
+
+
+==
+//create the driver class object .. in this case mysql related driver object created
+			Class.forName(driver).newInstance();
+			conn=DriverManager.getConnection(url+dbname,username,pass);
+			//connection reference established
+			Statement stmt=conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from potluck");
+			//first row
+			rs.next();
+			//prints the first row name column value
+			System.out.println(rs.getString("name"));
+			//brings the value of column 2
+			System.out.println(rs.getString(2));
+			// prints the whole table
+			while(rs.next()){
+				System.out.println(rs.getString(1)+"--"+rs.getString(2)+"--"+rs.getString(3)+"--"+rs.getString(4)+"--");
+			}
+			
+==============
+
+PreparedStatement pspmt= conn.prepareStatement("select * from potluck where name=?");
+			pspmt.setString(1, "Naveen");
+			ResultSet R1=pspmt.executeQuery();
+			System.out.println("********************");
+			while(R1.next()){
+				System.out.println(R1.getString(1)+"--"+R1.getString(2)+"--"+R1.getString(3)+"--"+R1.getString(4)+"--");
+			}
+			
+
+
+=============
+//**********************
+			//Inserting data
+			//**********************
+			
+			pspmt=conn.prepareStatement("insert into potluck(name,food,confirmed,signup_date) values(?,?,?,?) ");
+			//pspmt.setString(1, "4");
+			pspmt.setString(1, "Ravi");
+			pspmt.setString(2, "coke");
+			pspmt.setString(3, "N");
+			pspmt.setString(4, "2012-04-11");
+			pspmt.executeUpdate();
+
+Maven+JDBC******************
+http://stackoverflow.com/questions/1074869/find-oracle-jdbc-driver-in-maven-repository
+

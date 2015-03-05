@@ -1,0 +1,68 @@
+for excel 
+poi jars  3
+poi-3.6-20091214
+poi-ooxml-3.6-20091214
+poi-ooxml-schemas-3.6-20091214
+
+xml jars   2
+xml-apis-1.4.01
+xmlbeans-2.3.0
+dom jars  1
+dom4j-1.1
+===
+xslt reports
+SaxonLiaison
+saxon-8.7
+and .xsl file should be present under source.. (may be udner xslt folder)
+===
+
+
+log4j---for logging
+include the log 4j 
+add the log4j properties file under the src folder
+==
+
+
+Error and Exception both extend Throwable
+
+=====
+
+for error reproting 
+listeners
+inlcude testlistneradapter and errorutil files into util package
+=============
+
+Testng 
+While running ... adding the dependencies
+
+we have two tests logintest and findfriends
+
+now while writing the find friends testng test i will give it like this 
+@Test(dependsonMethod={"logintest"})
+public void findfriends(){
+}
+==========
+taking screen shot
+String scrsht_filename=tcid+"_"+keyword+"_"+rNum+".jpg";
+								File scrFile = ((TakesScreenshot)d1).getScreenshotAs(OutputType.FILE);
+			    FileUtils.copyFile(scrFile, new File(System.getProperty("user.dir")+"//screenshots//"+scrsht_filename));
+			
+
+======
+mvn test
+mvn test site
+mvn surefire-report:report
+
+
+
+
+===============
+grid
+java -jar -Dwebdriver.chrome.driver=C:\Seli\chromedriver_win32\chromedriver.exe -Dwebdriver.ie.driver=C:\Seli\IEDriverServer_Win32_2.44.0\IEDriverServer.exe selenium-server-standalone-2.44.0.jar -role hub -hubConfig hub.json
+java -jar -Dwebdriver.chrome.driver=C:\Seli\chromedriver_win32\chromedriver.exe -Dwebdriver.ie.driver=C:\Seli\IEDriverServer_Win32_2.44.0\IEDriverServer.exe selenium-server-standalone-2.44.0.jar -role node -hub http://localhost:4444/grid/register -nodeConfig node1.json
+java -jar -Dwebdriver.chrome.driver=C:\Seli\chromedriver_win32\chromedriver.exe -Dwebdriver.ie.driver=C:\Seli\IEDriverServer_Win32_2.44.0\IEDriverServer.exe selenium-server-standalone-2.44.0.jar -role node -hub http://localhost:4444/grid/register -nodeConfig node2.json
+
+
+
+http://localhost:4444/grid/console
+	

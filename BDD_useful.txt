@@ -1,0 +1,57 @@
+Cucumber*****
+feature file ----steps of the test case
+cucumber is one a tools which implements BDD
+
+https://cukes.info/
+==========================
+http://xebee.xebia.in/index.php/2014/06/04/behavior-driven-development-using-cucumber-jvm-a-java-approach/
+==============
+step classes
+runner classes
+==========
+cucumber-core-1.1.1
+cucumber-html-0.2.2
+cucumber-java-1.1.1
+cucumber-junit-1.1.1
+hamcrest-core-1.1
+jchronic-0.2.6
+junit-4.12
+===========
+in the features file if you want to use the examples version of data driven 
+the you have to use Scenario Outline
+	@Given("^I am a \"([a-zA-Z]{1,})\" tester$")
+	public void I_am_a_bad_tester(String testertype,DataTable table){
+
+Scenario: Testing
+
+Given I am a "Bad" tester
+|Industry|Country|
+| IT |India|
+|Automobile|Germany|
+When I go to Work
+Then I "Mess" with it
+And My boss "fires" me
+But my dev team "like" me
+
+
+
+Scenario Outline: I am a Tester
+
+Given I am a "<Typeoftester>" tester
+When I go to Work
+Then I "<Worktype>" with it
+And My boss "<Bossreaction>" me
+But my dev team "<Devteamreaction>" me
+
+
+
+================
+
+Step class --in some package name
+then 
+feature class should also be in the same package name ... may in diff src folder
+but the package names has to be same
+
+
+
+
